@@ -5,7 +5,10 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(helloworld VERSION ${PROJECT_VESRION})
 
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+if (MSVC)
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+endif()
+
 add_subdirectory("./googletest/")
 
 configure_file(version.h.in version.h)
