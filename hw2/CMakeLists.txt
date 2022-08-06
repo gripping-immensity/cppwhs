@@ -28,21 +28,21 @@ enable_testing()
 
 include(CPack)
 
-add_executable(Hw2 main.cpp util.cpp)
-target_link_libraries(Hw2 fmt::fmt)
+add_executable(ip_filter main.cpp util.cpp)
+target_link_libraries(ip_filter fmt::fmt)
 add_executable(Hw2Tests tests/general.cpp util.cpp)
 target_link_libraries(Hw2Tests fmt::fmt gtest gtest_main)
 target_include_directories(Hw2Tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 if (MSVC)
-    target_compile_options(Hw2 PRIVATE
+    target_compile_options(ip_filter PRIVATE
         /W4
     )
     target_compile_options(Hw2Tests PRIVATE
         /W4
     )
 else ()
-    target_compile_options(Hw2 PRIVATE
+    target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
     target_compile_options(Hw2Tests PRIVATE
@@ -50,7 +50,7 @@ else ()
     )
 endif()
 
-install(TARGETS Hw2 RUNTIME DESTINATION bin)
+install(TARGETS ip_filter RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
