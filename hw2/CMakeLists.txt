@@ -24,10 +24,6 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 FetchContent_MakeAvailable(fmt)
 
-enable_testing()
-
-include(CPack)
-
 add_executable(ip_filter main.cpp util.cpp)
 target_link_libraries(ip_filter fmt::fmt)
 add_executable(Hw2Tests tests/general.cpp util.cpp)
@@ -53,11 +49,14 @@ endif()
 install(TARGETS ip_filter RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
-
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
 set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
 set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 
 set(CPACK_PACKAGE_CONTACT example@example.com)
 
+include(CPack)
+
+enable_testing()
 add_test(Hw2Tests Hw2Tests)
+
