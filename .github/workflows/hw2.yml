@@ -29,7 +29,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
           release_name: HW2 Release ${{ github.run_number }}
           draft: false
           prerelease: false
