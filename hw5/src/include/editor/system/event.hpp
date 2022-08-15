@@ -1,11 +1,13 @@
 #pragma once
 
+#include <optional>
+
 #include <editor/action.hpp>
 
 namespace editor {
 
 struct Event {
-    virtual Action Process();
+    virtual std::optional<Action> Process(Window*);
 
     virtual ~Event();
 };

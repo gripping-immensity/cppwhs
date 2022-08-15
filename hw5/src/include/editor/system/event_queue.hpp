@@ -7,7 +7,7 @@ struct EventQueue {
     EventQueue();
 
     bool IsEmpty() const;
-    Event* PollEvent();
+    Event PollEvent();
 };
 
 

@@ -11,6 +11,7 @@ struct Window;
 struct Bytestream;
 
 struct Document {
+public:
     Document();
     Document(const std::string& filepath);
 
