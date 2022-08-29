@@ -31,8 +31,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        working-directory: ./hw4
-        publish_dir: ./doc/html/
+        publish_dir: ./hw4/doc/html/
         enable_jekyll: false
         allow_empty_commit: false
         force_orphan: true
