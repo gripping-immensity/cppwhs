@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./hw2
+        working-directory: ./hw4
     steps:
       - uses: actions/checkout@v2
         with:
@@ -29,8 +29,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: hw2-${{ github.run_number }}
-          release_name: HW2 Release ${{ github.run_number }}
+          tag_name: hw4-${{ github.run_number }}
+          release_name: HW4 Release ${{ github.run_number }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
