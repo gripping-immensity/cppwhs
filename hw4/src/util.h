@@ -13,6 +13,7 @@ struct is_vector : std::false_type {};
  * Checks if passed type is a vector
  * @tparam A vector's underlying type
  * @tparam An allocator type
+ * 
  */
 template <typename T, typename U>
 struct is_vector<std::vector<T, U>> : std::true_type {};
